@@ -28,15 +28,15 @@ const showMilestones = data => {
     <div class="accordion" id="accordionExample${milestone._id}">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne${milestone._id}">
-      <button class="accordion-button bg-danger text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne${milestone._id}" aria-expanded="true" aria-controls="collapseOne${milestone._id}" onclick="showImage('${milestone.image}')">
+      <button class="accordion-button bg-danger text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne${milestone._id}" aria-expanded="false" aria-controls="collapseOne${milestone._id}" onclick="showImage('${milestone.image}')">
       ${milestone.name}
       </button>
     </h2>
-    <div id="collapseOne${milestone._id}" class="accordion-collapse collapse show" aria-labelledby="headingOne${milestone._id}" data-bs-parent="#accordionExample${milestone._id}">
+    <div id="collapseOne${milestone._id}" class="accordion-collapse collapse" aria-labelledby="headingOne${milestone._id}" data-bs-parent="#accordionExample${milestone._id}">
       <div class="accordion-body">
       ${milestone.modules.map(module => {
             return `
-                            <p class="my-1 border"> ${module.name} </p>
+                            <p class="my-1 border rounded p-2"> ${module.name} </p>
                         `
         }).join("")}
       </div>
